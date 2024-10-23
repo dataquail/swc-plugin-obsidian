@@ -1,5 +1,196 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`Provider Arguments Transformer > Adds method name to provider arguments (@Provider() -> @Provider({name: "myProvidedDependency"}) 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+var MainGraph = /*#__PURE__*/ function() {
+    "use strict";
+    function MainGraph() {}
+    var _proto = MainGraph.prototype;
+    _proto.someString = function someString(stringProvider, emptyString) {
+        return stringProvider.theString + emptyString;
+    };
+    return MainGraph;
+}();
+_ts_decorate([
+    Provides(),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        void 0,
+        void 0
+    ]),
+    _ts_metadata("design:returntype", void 0)
+], MainGraph.prototype, "someString", null);
+"
+`;
+
+exports[`Provider Arguments Transformer > Adds property name to @Inject arguments @Inject -> @Inject("myDependency") 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+var MainGraph = function MainGraph() {
+    "use strict";
+};
+_ts_decorate([
+    Inject()
+], MainGraph.prototype, "someString", void 0);
+"
+`;
+
+exports[`Provider Arguments Transformer > Adds property name to @LateInject arguments @LateInject -> @LateInject("myDependency") 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+var MainGraph = function MainGraph() {
+    "use strict";
+};
+_ts_decorate([
+    LateInject()
+], MainGraph.prototype, "someString", void 0);
+"
+`;
+
+exports[`Provider Arguments Transformer > Does not add name if name is provided by the user 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+var MainGraph = /*#__PURE__*/ function() {
+    "use strict";
+    function MainGraph() {}
+    var _proto = MainGraph.prototype;
+    _proto.someString = function someString(stringProvider) {
+        return stringProvider.theString;
+    };
+    return MainGraph;
+}();
+_ts_decorate([
+    Provides({
+        name: 'myDependency'
+    }),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        void 0
+    ]),
+    _ts_metadata("design:returntype", void 0)
+], MainGraph.prototype, "someString", null);
+"
+`;
+
+exports[`Provider Arguments Transformer > Does not add property name to @Inject if name is provided by the user 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+var MainGraph = function MainGraph() {
+    "use strict";
+};
+_ts_decorate([
+    Inject('myDependency')
+], MainGraph.prototype, "someString", void 0);
+"
+`;
+
+exports[`Provider Arguments Transformer > Does not add property name to @LateInject if name is provided by the user 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+var MainGraph = function MainGraph() {
+    "use strict";
+};
+_ts_decorate([
+    LateInject('myDependency')
+], MainGraph.prototype, "someString", void 0);
+"
+`;
+
+exports[`Provider Arguments Transformer > handles providers that have no arguments 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+var MainGraph = /*#__PURE__*/ function() {
+    "use strict";
+    function MainGraph() {}
+    var _proto = MainGraph.prototype;
+    _proto.someString = function someString() {
+        return 'someString';
+    };
+    return MainGraph;
+}();
+_ts_decorate([
+    Provides(),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", []),
+    _ts_metadata("design:returntype", void 0)
+], MainGraph.prototype, "someString", null);
+"
+`;
+
+exports[`Provider Arguments Transformer > saves constructor argument name in Inject - @Inject -> @Inject(arg) 1`] = `
+""use strict";
+function _ts_decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
+function _ts_metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
+function _ts_param(paramIndex, decorator) {
+    return function(target, key) {
+        decorator(target, key, paramIndex);
+    };
+}
+var MainGraph = function MainGraph(arg) {
+    "use strict";
+};
+MainGraph = _ts_decorate([
+    _ts_param(0, Inject()),
+    _ts_metadata("design:type", Function),
+    _ts_metadata("design:paramtypes", [
+        void 0
+    ])
+], MainGraph);
+"
+`;
+
 exports[`Provider Arguments Transformer Adds method name to provider arguments (@Provider() -> @Provider({name: "myProvidedDependency"}) 1`] = `
 "var _dec, _class;
 function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) { var desc = {}; Object.keys(descriptor).forEach(function (key) { desc[key] = descriptor[key]; }); desc.enumerable = !!desc.enumerable; desc.configurable = !!desc.configurable; if ('value' in desc || desc.initializer) { desc.writable = true; } desc = decorators.slice().reverse().reduce(function (desc, decorator) { return decorator(target, property, desc) || desc; }, desc); if (context && desc.initializer !== void 0) { desc.value = desc.initializer ? desc.initializer.call(context) : void 0; desc.initializer = undefined; } if (desc.initializer === void 0) { Object.defineProperty(target, property, desc); desc = null; } return desc; }

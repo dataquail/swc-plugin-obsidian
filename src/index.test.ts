@@ -45,12 +45,9 @@ const namedLateInject = `class MainGraph {
 describe('Provider Arguments Transformer', () => {
   // const uut: Function = providerArgumentsTransformer;
 
-  it.only('Adds method name to provider arguments (@Provider() -> @Provider({name: "myProvidedDependency"})', () => {
-    console.log(1)
+  it('Adds method name to provider arguments (@Provider() -> @Provider({name: "myProvidedDependency"})', () => {
     const result = transformSync(unnamedProvider);
-    console.log(2)
     expect(result?.code).toMatchSnapshot();
-    console.log(3)
   });
 
   it('Does not add name if name is provided by the user', () => {
@@ -89,6 +86,13 @@ describe('Provider Arguments Transformer', () => {
   });
 
   const transformSync = (snippet: string) => swc.transformSync(snippet, {
+    filename: "input.js",
+    jsc: {
+    parser: {
+      syntax: "typescript",
+      decorators: true
+    }
+  },
     plugin(m) {
       return new ObsidianSWCPlugin().visitProgram(m);
     },

@@ -1,13 +1,15 @@
 {
   "jsc": {
     "parser": {
-      "syntax": "typescript",
-      "decorators": true
+      "syntax": "ecmascript",
+      "decorators": true,
+      "decoratorsBeforeExport": false
     },
     "transform": {
       "legacyDecorator": true,
       "decoratorMetadata": true
-    }
+    },
+    "loose": true
   },
   "module": {
     "type": "commonjs"
